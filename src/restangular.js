@@ -986,10 +986,10 @@ restangular.provider('Restangular', function() {
         return config.transformElem(localElem, true, route, service, true);
       }
 
-      function restangularizeCollectionAndElements(parent, element, route) {
-        var collection = restangularizeCollection(parent, element, route, false);
+      function restangularizeCollectionAndElements(parent, element, route, fromServer) {
+        var collection = restangularizeCollection(parent, element, route, fromServer);
         _.each(collection, function(elem) {
-          restangularizeElem(parent, elem, route, false);
+          restangularizeElem(parent, elem, route, fromServer);
         });
         return collection;
       }
